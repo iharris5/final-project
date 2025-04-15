@@ -1,12 +1,45 @@
 <html>
     <head>
         <!-- remember to route relative to index.php  -->
-        <script type="text/javascript" src="./assets/js/homepage.js"></script>
-        <link rel="stylesheet" href="./assets/styles/homepage.css">
+        <meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<title>CustomsByNico</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="assets/js/homepage.js"></script>
+        <link rel="stylesheet" href="assets/styles/homepage.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     </head>
-
-    <body>
-        <p>homepage!</p>
+    <body id="top" class="with-header">
+	<section class="top-section">
+		<a href="#top"><img src="assets/views/main/images/nicologo.jpg" alt="CustomsByNico" class="logo"></a>
+	</section>
+        <p>Welcome to CustomsByNico!</p>
+	<p>Here are some shoes I've worked on</p>
+	<div class="shoe-container">
+		<div class="shoe-pic"><img src="assets/views/main/images/IMG_1421.jpeg" alt="NicoShoe"></div>
+		<div class="shoe-pic"><img src="assets/views/main/images/IMG_2355.jpeg" alt="NicoShoe"></div>
+		<div class="shoe-pic"><img src="assets/views/main/images/IMG_3409.jpeg" alt="NicoShoe"></div>
+		<div class="shoe-pic"><img src="assets/views/main/images/IMG_3553.jpeg" alt="NicoShoe"></div>
+                <div class="shoe-pic"><img src="assets/views/main/images/IMG_3575.jpeg" alt="NicoShoe"></div>
+                <div class="shoe-pic"><img src="assets/views/main/images/IMG_3951.jpeg" alt="NicoShoe"></div>
+		<div class="shoe-pic"><img src="assets/views/main/images/IMG_5545.jpeg" alt="NicoShoe"></div>
+                <div class="shoe-pic"><img src="assets/views/main/images/IMG_6056.jpeg" alt="NicoShoe"></div>
+                <div class="shoe-pic"><img src="assets/views/main/images/IMG_6161.jpeg" alt="NicoShoe"></div>
+		<div class="shoe-pic"><img src="assets/views/main/images/IMG_9383.jpeg" alt="NicoShoe"></div>
+	</div>
+	<div id="lightbox" class="lightbox">
+        	<span class="close">&times;</span>
+        	<img class="lightbox-img" src="" alt="Expanded Image">
+    	</div>
+	<div class="btn-container"><button id="review-submit" class="btn btn-primary">Request a Custom Shoe</button></div>
+    	<script>
+		document.getElementById("review-submit").addEventListener("click", function () {
+        		window.location.href = "/api/request";
+    		});
+	</script>
     </body>
 </html>
-

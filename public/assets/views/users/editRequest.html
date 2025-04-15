@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Your Request</title>
+</head>
+<body>
+    <form id="edit-form">
+        <div id="form-container"></div>
+        <button type="submit">Save Changes</button>
+    </form>
+
+    <div id="error-container"></div>
+
+    <script>
+        const pathParts = window.location.pathname.split('/');
+        const requestId = pathParts[2];
+
+        fetch(`http://localhost/api/requests/${requestId}`)
+            .then(res => res.json())
+            .then(data => {
+                const contactOptions = ['Email', 'Instagram'];
+                const paymentOptions = ['Zelle', 'PayPal', 'CashApp'];
+
+                const contactHTML = contactOptions.map(option => `
+                    <label>
+                        <input type="radio" name="form_of_contact" value="${option}" ${data.form_of_contact === option ? 'checked' : ''}> ${option}
+                    </label>
+                `).join('');
+
+                const paymentHTML = paymentOptions.map(option => `
+                    <label>
+                        <input type="radio" name="payment_method" value="${option}" ${data.payment_method === option ? 'checked' : ''}> ${option}
+                    </label>
+                `).join('');
+
+                
+		const livesInUs = data.lives_in_US || 'Yes';
+
+		document.getElementById('form-container').innerHTML = `
+                    <input name="email" placeholder="Email" value="${data.email}"><br>
+                    <input name="design" placeholder="Design" value="${data.design}"><br>
+                    <input name="shoe_size" placeholder="Shoe Size" value="${data.shoe_size}"><br>
+                    <input name="name" placeholder="Name" value="${data.name}"><br>
+                    <label>
+                        <input type="radio" name="lives_in_US" value="Yes" ${data.lives_in_US === 'Yes' ? 'checked' : ''}> Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="lives_in_US" value="No" ${data.lives_in_US === 'No' ? 'checked' : ''}> No
+                    </label><br>
+                    <input name="mailing_address" placeholder="Mailing Address" value="${data.mailing_address}"><br>
+                    ${contactHTML}<br>
+                    <input name="insta_handle" placeholder="Instagram Handle" value="${data.insta_handle ?? ''}"><br>
+                    ${paymentHTML}<br>
+                `;
+            });
+
+        document.getElementById('edit-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const requestData = {};
+            formData.forEach((value, key) => {
+                requestData[key] = value;
+            });
+
+            fetch(`http://localhost/api/requests/${requestId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(requestData)
+            })
+            .then(res => res.json())
+            .then(() => {
+                window.location.href = `/requests/${requestId}/review`;
+            })
+            .catch(err => {
+                console.error(err);
+                document.getElementById('error-container').innerText = 'Something went wrong!';
+            });
+        });
+    </script>
+</body>
+</html>

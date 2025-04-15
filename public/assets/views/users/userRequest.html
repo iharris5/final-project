@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CustomsByNico Request Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/assets/styles/userRequest.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container request-form">
+        <h1>CustomsByNico Order Request Form</h1>
+        <p>Hi! Thank you for checking out my customs :) Please fill out this form if you're interested in purchasing customs.</p>
+        <p>Once this form is completed, you will receive an Email/Instagram DM from me with some mock up designs based on your responses or what we have discussed previously.</p>
+        <p>Please do not hesitate to reach out to me prior to filling out this form if you have any questions/concerns!</p>
+
+        <a href="http://localhost/" class="btn btn-secondary mb-3">Back</a>
+
+        <form id="request-form">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+
+            <h2>Design Request</h2>
+            <label for="design">Describe your desired AF1 design *</label>
+            <input type="text" id="design" name="design" placeholder="Color schemes, characters, logos" required>
+
+            <label for="shoe_size">U.S. Shoe Size *</label>
+            <input type="text" id="shoe_size" name="shoe_size" placeholder="Ex. 6.5Y, 7 Womens, 11 Mens" required>
+
+            <h2>Customer Information</h2>
+            <p>This information is for shipping only.</p>
+
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
+
+            <label>Are you located in the U.S.? *</label>
+            <div>
+                <input type="radio" id="lives_in_us_yes" name="lives_in_US" value="Yes" required>
+                <label for="lives_in_us_yes">Yes</label>
+            </div>
+            <div>
+                <input type="radio" id="lives_in_us_no" name="lives_in_US" value="No">
+                <label for="lives_in_us_no">No</label>
+            </div>
+
+            <div id="us-shipping" style="display:none;">
+                <h3>Shipping (U.S.)</h3>
+                <label for="us_mailing_address">Full Mailing Address *</label>
+                <input type="text" id="us_mailing_address" name="us_mailing_address" placeholder="123 Main St., Towncity, NY, 12345">
+            </div>
+
+            <div id="intl-shipping" style="display:none;">
+                <h3>International Shipping</h3>
+                <label for="intl_mailing_address">Full Address *</label>
+                <input type="text" id="intl_mailing_address" name="intl_mailing_address" placeholder="Full Intl Address, including postal code and country">
+            </div>
+
+            <h2>Best Form of Contact *</h2>
+            <div>
+                <input type="radio" id="contact_email" name="form_of_contact" value="Email" required>
+                <label for="contact_email">Email</label>
+            </div>
+            <div>
+                <input type="radio" id="contact_instagram" name="form_of_contact" value="Instagram">
+                <label for="contact_instagram">Instagram</label>
+            </div>
+
+            <div id="insta-handle-container" style="display:none;">
+                <label for="insta_handle">Instagram Handle *</label>
+                <input type="text" id="insta_handle" name="insta_handle" placeholder="@yourhandle">
+            </div>
+
+            <h2>Payment Method *</h2>
+            <p>Once the design is confirmed, you'll get instructions to submit payment. Payment must be sent before I start your custom shoes!</p>
+
+            <div>
+                <input type="radio" id="paypal" name="payment_method" value="Paypal" required>
+                <label for="paypal">Paypal</label>
+            </div>
+            <div>
+                <input type="radio" id="zelle" name="payment_method" value="Zelle">
+                <label for="zelle">Zelle</label>
+            </div>
+            <div>
+                <input type="radio" id="invoice" name="payment_method" value="Invoice">
+                <label for="invoice">Invoice (an email will be sent to submit payment by card)</label>
+            </div>
+            <div>
+                <input type="radio" id="cash" name="payment_method" value="Cash">
+                <label for="cash">Cash (Pickup Orders Only)</label>
+            </div>
+
+            <button type="submit" id="review-submit" class="btn btn-primary mt-3">Review & Submit</button>
+        </form>
+
+        <div id="error-container"></div>
+    </div>
+
+    <script type="text/javascript" src="/assets/js/userRequest.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,132 @@
+body {
+    background-color: #f3e5f5;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 20px;
+    color: #333;
+}
+
+h1, h2, h3, p, label {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+p {
+    text-align: center;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.request-form {
+    max-width: 750px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 10px 0 20px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 8px;
+}
+
+h2 {
+    margin-top: 30px;
+    font-weight: 600;
+}
+
+#us-shipping,
+#intl-shipping,
+#insta-handle-container {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+button#review-submit {
+    display: block;
+    margin: 0 auto;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    background-color: #9c27b0;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+button#review-submit:hover {
+    background-color: #7b1fa2;
+}
+
+#error-container {
+    margin-top: 20px;
+    color: red;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .radio-group {
+        flex-direction: column;
+    }
+
+    .request-form {
+        padding: 20px;
+    }
+}
+
+.thanks-container {
+	text-align: center;
+}
+
+.home-btn {
+    display: inline-block; 
+    margin: 20px auto;      
+    padding: 10px 20px;    
+    background-color: #6200ea; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.home-btn:hover {
+	background-color: #3700b3;
+}

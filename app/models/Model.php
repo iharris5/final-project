@@ -4,23 +4,22 @@ namespace app\models;
 
 abstract class Model {
 
+    protected $db;
+
+    public function __construct() {
+        $string = "mysql:host=" . DBHOST . ";dbname=" . DBNAME;
+        $this->db = new \PDO($string, DBUSER, DBPASS);
+    }
+
     public function findAll() {
-        $query = "select * from $this->table";
+        $query = "SELECT * FROM $this->table";
         return $this->query($query);
     }
 
-    private function connect() {
-        $string = "mysql:hostname=" . DBHOST . ";dbname=" . DBNAME;
-        $con = new \PDO($string, DBUSER, DBPASS);
-        return $con;
-    }
-
     public function query($query, $data = []) {
-        $con = $this->connect();
-        $stm = $con->prepare($query);
+        $stm = $this->db->prepare($query);
         $check = $stm->execute($data);
         if ($check) {
-            //return as an associated array
             $result = $stm->fetchAll(\PDO::FETCH_ASSOC);
             if (is_array($result) && count($result)) {
                 return $result;
@@ -29,4 +28,8 @@ abstract class Model {
         return false;
     }
 
+    public function getLastInsertId() {
+        return $this->db->lastInsertId();
+    }
 }
+

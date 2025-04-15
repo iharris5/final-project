@@ -1,0 +1,48 @@
+h1 {
+	text-align: center;
+	font-family: 'Josefin Sans', sans-serif;
+        font-weight: 500;
+        font-style: normal;
+}
+
+#cancel-btn {
+	background-color: #B22222;
+	border-color: #B22222;
+	color: white;
+	text-decoration: none;
+	font-family: 'Josefin Sans', sans-serif;
+        font-weight: 400;
+	padding: 10px 20px;
+	border-radius: 10px;
+	transition: background-color: 0.3s ease;
+}
+
+#cancel-btn:hover {
+	background-color: #9e1b32;
+	border-color: #9e1b32;
+	cursor: pointer;
+}
+
+#final-submit-btn {
+        background-color: #800080;
+        border-color: #800080;
+        color: white;
+        text-decoration: none;
+	font-family: 'Josefin Sans', sans-serif;
+        font-weight: 400;
+        padding: 10px 20px;
+        border-radius: 10px;
+	transition: background-color: 0.3s ease;
+}
+
+#final-submit-btn:hover {
+	background-color: #1d1160;
+	border-color: #1d1160;
+	cursor: pointer;
+}
+
+.btn-wrapper {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}

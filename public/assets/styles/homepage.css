@@ -1,3 +1,109 @@
 p {
-    color: blue;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
+
+body {
+	background-color: #f3e5f5;
+}
+
+body.with-header {
+	padding-top: 120px;
+}
+
+.logo {
+	width: 200px;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+	background-color: blue;
+}
+
+.top-section {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: radial-gradient(circle, #f8f9fb 30%, transparent 80%);
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.shoe-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	justify-items: center;
+	gap: 10px;
+	padding: 10px;
+}
+
+.shoe-pic {
+	width: 100%;
+	height: 250px;
+	overflow: hidden;
+}
+
+.shoe-pic img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.2s ease;
+}
+
+.shoe-pic img:hover {
+	transform: scale(1.05);
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #000;
+}
+
+.lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-container {
+	text-align: center;
+}
+
+#review-submit {
+    display: inline-block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+#review-submit:hover {
+        background-color: #3700b3;
+}
+
