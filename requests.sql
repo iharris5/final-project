@@ -25,15 +25,15 @@ CREATE TABLE `shoe_pics` (
 
 INSERT INTO shoe_pics (image_url) 
 VALUES
-('/assets/views/main/images/IMG_1421.jpeg'),
-('/assets/views/main/images/IMG_2355.jpeg'),
-('/assets/views/main/images/IMG_3409.jpeg'),
-('/assets/views/main/images/IMG_3553.jpeg'),
-('/assets/views/main/images/IMG_3575.jpeg'),
-('/assets/views/main/images/IMG_3951.jpeg'),
-('/assets/views/main/images/IMG_5545.jpeg'),
-('/assets/views/main/images/IMG_6056.jpeg'),
-('/assets/views/main/images/IMG_6161.jpeg'),
-('/assets/views/main/images/IMG_9383.jpeg');
+('https://i.imgur.com/SGLWSpC.jpeg'),
+('https://i.imgur.com/Na9alLL.jpeg'),
+('https://i.imgur.com/wsKWLjr.jpeg'),
+('https://i.imgur.com/yrHK7h9.jpeg'),
+('https://i.imgur.com/I7vlAx0.jpeg'),
+('https://i.imgur.com/z1CQFnh.jpeg'),
+('https://i.imgur.com/MowkYrh.jpeg'),
+('https://i.imgur.com/ZaX4q67.jpeg'),
+('https://i.imgur.com/mD77UxN.jpeg'),
+('https://i.imgur.com/YSiv4TT.jpeg');
 
 	
