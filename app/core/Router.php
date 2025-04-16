@@ -25,7 +25,12 @@ class Router {
         if ($this->uriArray[1] === '' && $_SERVER['REQUEST_METHOD'] === 'GET') {
             $mainController = new MainController();
             $mainController->homepage();
-        }
+	}
+
+	if ($this->uriArray[1] === 'api' && $this->uriArray[2] === 'images' && $_SERVER['REQUEST_METHOD'] === 'GET') {
+        	$mainController = new MainController();
+        	$mainController->getImages(); 
+    	}
     }
 
     protected function handleUserRoutes() {

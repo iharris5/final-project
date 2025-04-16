@@ -1,11 +1,10 @@
 $(document).ready(function () {
-    // Get the custom request data from local storage
     const requestData = JSON.parse(localStorage.getItem("customRequestData"));
 
     if (!requestData) {
         console.log("No data found in localStorage. Redirecting to form...");
         alert("No data found. Redirecting back to form...");
-        window.location.href = "/api/request"; // Corrected redirect URL
+        window.location.href = "/api/request"; 
         return;
     }
 

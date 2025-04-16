@@ -23,22 +23,27 @@
 
         <form id="request-form">
             <label for="email">Email *</label>
+	    <div id="email-error" class="error-message" style="display:none;"></div>
             <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
 
             <h2>Design Request</h2>
             <label for="design">Describe your desired AF1 design *</label>
+	    <div id="design-error" class="error-message" style="display:none;"></div>
             <input type="text" id="design" name="design" placeholder="Color schemes, characters, logos" required>
 
             <label for="shoe_size">U.S. Shoe Size *</label>
+	    <div id="shoe_size-error" class="error-message" style="display:none;"></div>
             <input type="text" id="shoe_size" name="shoe_size" placeholder="Ex. 6.5Y, 7 Womens, 11 Mens" required>
 
             <h2>Customer Information</h2>
             <p>This information is for shipping only.</p>
 
             <label for="name">Full Name *</label>
+	    <div id="name-error" class="error-message" style="display:none;"></div>
             <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
 
             <label>Are you located in the U.S.? *</label>
+	    <div id="lives_in_us-error" class="error-message" style="display:none;"></div>
             <div>
                 <input type="radio" id="lives_in_us_yes" name="lives_in_US" value="Yes" required>
                 <label for="lives_in_us_yes">Yes</label>
@@ -51,17 +56,20 @@
             <div id="us-shipping" style="display:none;">
                 <h3>Shipping (U.S.)</h3>
                 <label for="us_mailing_address">Full Mailing Address *</label>
+		<div id="us_mailing_address-error" class="error-message" style="display:none;"></div>
                 <input type="text" id="us_mailing_address" name="us_mailing_address" placeholder="123 Main St., Towncity, NY, 12345">
             </div>
 
             <div id="intl-shipping" style="display:none;">
                 <h3>International Shipping</h3>
                 <label for="intl_mailing_address">Full Address *</label>
+		<div id="intl_mailing_address-error" class="error-message" style="display:none;"></div>
                 <input type="text" id="intl_mailing_address" name="intl_mailing_address" placeholder="Full Intl Address, including postal code and country">
             </div>
 
             <h2>Best Form of Contact *</h2>
-            <div>
+            <div id="form_of_contact-error" class="error-message" style="display:none;"></div>
+	    <div>
                 <input type="radio" id="contact_email" name="form_of_contact" value="Email" required>
                 <label for="contact_email">Email</label>
             </div>
@@ -72,13 +80,15 @@
 
             <div id="insta-handle-container" style="display:none;">
                 <label for="insta_handle">Instagram Handle *</label>
+		<div id="insta_handle-error" class="error-message" style="display:none;"></div>
                 <input type="text" id="insta_handle" name="insta_handle" placeholder="@yourhandle">
             </div>
 
             <h2>Payment Method *</h2>
             <p>Once the design is confirmed, you'll get instructions to submit payment. Payment must be sent before I start your custom shoes!</p>
 
-            <div>
+            <div id="payment_method-error" class="error-message" style="display:none;"></div>
+	    <div>
                 <input type="radio" id="paypal" name="payment_method" value="Paypal" required>
                 <label for="paypal">Paypal</label>
             </div>
@@ -94,8 +104,11 @@
                 <input type="radio" id="cash" name="payment_method" value="Cash">
                 <label for="cash">Cash (Pickup Orders Only)</label>
             </div>
+	    <div>
+		<p><strong><br>Please make sure that all information submitted is correct to avoid any delays in your order</strong></p>
+	    </div>
 
-            <button type="submit" id="review-submit" class="btn btn-primary mt-3">Review & Submit</button>
+            <button type="submit" id="review-submit" class="btn btn-primary mt-3">Submit</button>
         </form>
 
         <div id="error-container"></div>

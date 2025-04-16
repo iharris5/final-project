@@ -130,3 +130,16 @@ button#review-submit:hover {
 .home-btn:hover {
 	background-color: #3700b3;
 }
+
+#email-error {
+	color: red;
+	font-size: 16px;
+}
+
+.is-invalid {
+	border-color: red;
+}
+
+.error-message {
+	color: red;
+}
