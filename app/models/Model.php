@@ -7,7 +7,7 @@ abstract class Model {
     protected $db;
 
     public function __construct() {
-        $string = "mysql:host=" . DBHOST . ";port=" . DBPORT . ";dbname=" . DBNAME . ";charset=utf8mb4";
+        $string = "mysql:host=" . DBHOST . ";dbname=" . DBNAME;
         $this->db = new \PDO($string, DBUSER, DBPASS);
     }
 

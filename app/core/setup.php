@@ -14,21 +14,10 @@ require '../app/controllers/RequestController.php';
 
 //set up env variables
 
-if($_SERVER['SERVER_NAME'] == 'localhost') {
-    $env = parse_ini_file('../.env');
-    /** database config **/
-    define('DBNAME', $env['DBNAME']);
-    define('DBHOST', $env['DBHOST']);
-    define('DBUSER', $env['DBUSER']);
-    define('DBPASS', $env['DBPASS']);
-    define('DBPORT', $env['DBPORT']);
+$env = parse_ini_file('../.env');
 
-} else {
-    /** database config **/
-    define('DBNAME', getenv('DBNAME'));
-    define('DBHOST', getenv('DBHOST'));
-    define('DBUSER', getenv('DBUSER'));
-    define('DBPASS', getenv('DBPASS'));
-    define('DBPORT', getenv('DBPORT'));
-    define('ROOT', 'https://immense-beyond-39727.herokuapp.com/');
-}
+define('DBNAME', $env['DBNAME']);
+define('DBHOST', $env['DBHOST']);
+define('DBUSER', $env['DBUSER']);
+define('DBPASS', $env['DBPASS']);
+

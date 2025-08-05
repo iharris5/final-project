@@ -15,7 +15,7 @@
     <div class="thanks-container">
         <h1>Thank You!</h1>
 	<p>You will receive an email in 3-5 business days confirming your order request along with mock ups of your customs!</p>
-	<a href="/" class="home-btn">Home</a>
+	<a href="http://localhost/" class="home-btn">Home</a>
     </div>
 </body>
 </html>
